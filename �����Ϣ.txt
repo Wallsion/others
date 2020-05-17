@@ -1,0 +1,25 @@
+id userID email phoneNum passWord nickName sex signature authority（权限）lockSate(账户是否被锁定) deleteLabel(是否为删除账户) loginDays lastLogin registerTime
+CREATE TABLE IF NOT EXISTS UserInfo(
+   id INT UNSIGNED AUTO_INCREMENT,
+   userID VARCHAR(40) NOT NULL,
+   email VARCHAR(40) NOT NULL,
+   phoneNum CHAR(11) DEFAULT '',
+   passWord VARCHAR(18) NOT NULL,
+   nickName VARCHAR(40) DEFAULT '我的名字很长能够使用一万年也用不完你信吗' ,
+   sex CHAR(4) DEFAULT '男',
+   signature VARCHAR(60) DEFAULT '',
+   authority TINYINT NOT NULL DEFAULT 3,
+   lockSate TINYINT DEFAULT 0,
+   deleteLabel TINYINT DEFAULT 0,
+   loginDays INT DEFAULT 1,
+   lastLogin DATE,
+   registerTime DATETIME,
+   PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO UserInfo (userID,email,passWord,lastLogin,registerTime) VALUES ('WX1','1287150601@qq.com','WX1515_','2019-06-01','2019-06-01');
+
+前端post get函数 ：post用w get用a  
+	参数1 para1
+	参数2 para2
+	...n  paran
